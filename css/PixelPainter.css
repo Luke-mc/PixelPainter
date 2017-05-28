@@ -1,4 +1,9 @@
-
+#pp-canvas{
+  display:inline-block;
+}
+body{
+  background-color: #339933;
+}
 .cell {
   background-color: white;
   border:solid 2px;
@@ -7,15 +12,101 @@
 
 .pixel
 {
-  height: 30px;
-  width: 30px;
+  height: 10px;
+  width: 10px;
   padding: 0px;
-  border:none;
+  border:0px;
+  margin:0px;
   box-shadow: none;
   background-color: white;
 }
 
-table, tr, td{
+.colors{
+  float:right;
+  background-color: black;
+}
+
+table,td,tr{
   background-color: black;
   border-collapse: collapse;
+}
+
+#clear{
+  float:right;
+
+}
+
+#erase{
+ float:right;
+}
+#swatch0{
+  background-color:white;
+}
+#swatch1{
+  float:left;
+  background-color: lightgray;
+
+}
+#swatch2{
+  background-color:gray;
+}
+#swatch3{
+  background-color:darkgray;
+}
+#swatch4{
+  background-color:black;
+}
+#swatch5{
+  background-color:yellow;
+}
+#swatch6{
+  background-color:orange;
+}
+#swatch7{
+  background-color:salmon;
+}
+#swatch8{
+  background-color:pink;
+}
+#swatch9{
+  background-color:lightblue;
+}
+#swatch10{
+  background-color:cornflowerblue;
+}
+#swatch11{
+  background-color:aqua;
+}
+#swatch12{
+  background-color:blue;
+}
+#swatch13{
+  background-color:red
+}
+#swatch14{
+  background-color:darkred;
+}
+#swatch15{
+  background-color:purple;
+}
+#swatch16{
+  background-color:teal;
+}
+#swatch17{
+  background-color:lightgreen;
+}
+#swatch18{
+  background-color:lime;
+}
+#swatch19{
+  background-color:magenta;
+}
+#swatch20{
+  background-color:green;
+}
+#swatch21{
+  background-color:darkgreen;
+}
+#swatch22{
+  background-color:#bfff00;
 }
