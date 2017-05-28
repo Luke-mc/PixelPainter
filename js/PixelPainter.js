@@ -1,40 +1,35 @@
-var para = document.createElement("div");
-para.setAttribute("id", "pp-canvas");
+var canvas = document.createElement("div");
+canvas.setAttribute("id", "pp-canvas");
 var pixel = document.getElementById('pixelPainter');
+pixel.appendChild(canvas);
+var table = document.createElement('table');
+canvas.appendChild(table);
+table.className = "tables";
 
-pixel.appendChild(para);
- var btn = document.createElement("BUTTON");
+function pixelPainter(width,height) {
 
-    para.appendChild(btn);
+  for( var i = 0; i <= width; i++ ){
+    var tRow = document.createElement('tr');
+    table.appendChild(tRow);
 
+  for( var j = 0; j <= height; j++ ){
+    tRow.innerHTML +=
+    '<td><button classname="pixel" id="button'+ j + '"></button></td>';
 
-  function pixelPainter(width) {
+    }
 
-function column(height) {
-  for( var i = 0; i <= height; i++ ){
-   para.innerHTML +=
-    '<button id="BUTTON' + i + '"></button>';
   }
 
-}
 
-function row(width){
-  var column = column();
-  for( var i = 0; i <= height; i++ ){
-   para.innerHTML +=
-        '<tr id = "row' + i + '">column<td>...</td></tr>';
-}
-}
 
-return{
-  column,
-  row,
-};
+  return{
+    row
+
+  };
 
 }
 
-myPix = pixelPainter();
+pixelPainter(10,10);
 
-myPix.column(10)
 
-myPix.row(5)
+
