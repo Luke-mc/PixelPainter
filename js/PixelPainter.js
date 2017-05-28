@@ -1,10 +1,11 @@
+var main = document.getElementById('pixelPainter');
 var canvas = document.createElement("div");
 canvas.setAttribute("id", "pp-canvas");
-var main = document.getElementById('pixelPainter');
-main.appendChild(canvas);
 var table = document.createElement('table');
+table.setAttribute("classname", "tables");
+main.appendChild(canvas);
 canvas.appendChild(table);
-table.className = "tables";
+
 
 
 
