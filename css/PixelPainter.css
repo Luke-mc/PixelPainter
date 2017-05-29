@@ -54,6 +54,7 @@ table,td,tr{
   top: 400px;
   display:inline;
   }
+
 /* Clear & Erase Buttons */
 #clear {
   border-top: 1px solid #63737d;
@@ -81,11 +82,13 @@ table,td,tr{
   top:0px;
   box-shadow: 0 15px 6px -6px lightgray;
   }
+
 #clear:hover {
   border-top-color: #2c4e73;
   background: #2c4e73;
   color: #000000;
   }
+
 #clear:active {
   border-top-color: #ffffff;
   background: #ffffff;
@@ -114,11 +117,13 @@ table,td,tr{
   vertical-align: middle;
   box-shadow: 0 15px 6px -6px lightgray;
   }
+
 #erase:hover {
   border-top-color: #2c4e73;
   background: #2c4e73;
   color: #000000;
   }
+
 #erase:active {
   border-top-color: #ffffff;
   background: #ffffff;
