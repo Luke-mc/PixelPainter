@@ -1,136 +1,128 @@
-#pp-canvas{
-  display:inline-block;
-  /*+placement: 213px -96px;*/
-position: relative;
-left: 60px;
-top: 20px;
-border: solid .1px;
+html{
+  background: url("http://library.mitsubishielectric.co.uk/assets_frontend/pdf-directory/images/blankWall_BG.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
-}
-body{
-  background:url("http://library.mitsubishielectric.co.uk/assets_frontend/pdf-directory/images/blankWall_BG.jpg");
-   background-blend-mode: color-dodge;
-  background-size: 120%;
-  background-repeat: no-repeat;
-}
-.cell {
+table,td,tr{
+  border-spacing: 0px;
   background-color: white;
-  border:solid 2px;
+  border-collapse: collapse;
+  }
 
-}
-
-.pixel
-{
+.pixelTd{
+  border-spacing: 0px;
   height: 10px;
   width: 10px;
-  padding: 0px;
-  border:0px;
-  margin:0px;
-  box-shadow: none;
-  background-color: white;
-}
+  }
 
 .colors{
   float:right;
   background-color: black;
-}
-
-table,td,tr{
-  backface-visibility: none;
-  border-collapse: collapse;
-}
-
-
-#btnDiv{
-position: absolute;
-left: -6.5px;
-top: 390px;
-display:inline;
-
-}
-
-#clear {
-   border-top: 1px solid #63737d;
-   background: #003f69;
-   background: -webkit-gradient(linear, left top, left bottom, from(#97b9cf), to(#003f69));
-   background: -webkit-linear-gradient(top, #97b9cf, #003f69);
-   background: -moz-linear-gradient(top, #97b9cf, #003f69);
-   background: -ms-linear-gradient(top, #97b9cf, #003f69);
-   background: -o-linear-gradient(top, #97b9cf, #003f69);
-   padding: 6.5px 13px;
-   -webkit-border-radius: 8px;
-   -moz-border-radius: 8px;
-   border-radius: 8px;
-   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   box-shadow: rgba(0,0,0,1) 0 1px 0;
-   text-shadow: rgba(0,0,0,.4) 0 1px 0;
-   color: #ffffff;
-   font-size: 14px;
-   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
-   text-decoration: none;
-   vertical-align: middle;
-   position:relative;
-   left:72px;
-   top:33px;
-   }
-#clear:hover {
-   border-top-color: #2c4e73;
-   background: #2c4e73;
-   color: #000000;
-   }
-#clear:active {
-   border-top-color: #ffffff;
-   background: #ffffff;
-
-   }
-
-
-#erase {
-   border-top: 1px solid #63737d;
-   background: #003f69;
-   background: -webkit-gradient(linear, left top, left bottom, from(#97b9cf), to(#003f69));
-   background: -webkit-linear-gradient(top, #97b9cf, #003f69);
-   background: -moz-linear-gradient(top, #97b9cf, #003f69);
-   background: -ms-linear-gradient(top, #97b9cf, #003f69);
-   background: -o-linear-gradient(top, #97b9cf, #003f69);
-   padding: 6.5px 13px;
-   -webkit-border-radius: 8px;
-   -moz-border-radius: 8px;
-   border-radius: 8px;
-   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   box-shadow: rgba(0,0,0,1) 0 1px 0;
-   text-shadow: rgba(0,0,0,.4) 0 1px 0;
-   color: #ffffff;
-   font-size: 14px;
-   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
-   text-decoration: none;
-   vertical-align: middle;
-   }
-#erase:hover {
-   border-top-color: #2c4e73;
-   background: #2c4e73;
-   color: #000000;
-   }
-#erase:active {
-   border-top-color: #ffffff;
-   background: #ffffff;
-   }
+  }
 
 #pixelPainter{
   display:inline-block;
+  }
 
-}
+#pp-canvas{
+  border-spacing: 0px;
+  overflow: hidden;
+  position:relative;
+  left: 70px;
+  top: -25px;
+  border: solid #adafb2 1.2px;
+  width: 750px;
+  height:450px;
+  box-shadow: 0 15px 6px -6px lightgray;
+  }
 
 #controls{
   margin-top:10%;
   display:inline-block;
-  /*+placement: 244px -66px;*/
-position: relative;
-left: 90px;
-top: -70px;
+  position: relative;
+  left: 150;
+  top: -85px;
+  box-shadow: 0 15px 6px -6px lightgray;
+  }
 
-}
+#btnDiv{
+  position: absolute;
+  left: -60px;
+  top: 400px;
+  display:inline;
+  }
+/* Clear & Erase Buttons */
+#clear {
+  border-top: 1px solid #63737d;
+  background: #003f69;
+  background: -webkit-gradient(linear, left top, left bottom, from(#97b9cf), to(#003f69));
+  background: -webkit-linear-gradient(top, #97b9cf, #003f69);
+  background: -moz-linear-gradient(top, #97b9cf, #003f69);
+  background: -ms-linear-gradient(top, #97b9cf, #003f69);
+  background: -o-linear-gradient(top, #97b9cf, #003f69);
+  padding: 6.5px 13px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+  text-decoration: none;
+  vertical-align: middle;
+  position:relative;
+  left:140px;
+  top:0px;
+  box-shadow: 0 15px 6px -6px lightgray;
+  }
+#clear:hover {
+  border-top-color: #2c4e73;
+  background: #2c4e73;
+  color: #000000;
+  }
+#clear:active {
+  border-top-color: #ffffff;
+  background: #ffffff;
+  }
+
+#erase {
+  border-top: 1px solid #63737d;
+  background: #003f69;
+  background: -webkit-gradient(linear, left top, left bottom, from(#97b9cf), to(#003f69));
+  background: -webkit-linear-gradient(top, #97b9cf, #003f69);
+  background: -moz-linear-gradient(top, #97b9cf, #003f69);
+  background: -ms-linear-gradient(top, #97b9cf, #003f69);
+  background: -o-linear-gradient(top, #97b9cf, #003f69);
+  padding: 6.5px 13px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+  text-decoration: none;
+  vertical-align: middle;
+  box-shadow: 0 15px 6px -6px lightgray;
+  }
+#erase:hover {
+  border-top-color: #2c4e73;
+  background: #2c4e73;
+  color: #000000;
+  }
+#erase:active {
+  border-top-color: #ffffff;
+  background: #ffffff;
+  }
+
 
 

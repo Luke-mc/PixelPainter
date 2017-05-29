@@ -41,13 +41,14 @@ function pixelPainter(width,height) {
 
    for( var j = 0; j <= width; j++ ){
 /* Creating Pixel */
-   var pixelTd =document.createElement("td");
-   var pixel = document.createElement("div");
+   var pixelTd =document.createElement('td');
+   //var pixel = document.createElement("div");
    pixelTd.setAttribute("class", "pixelTd");
-   pixel.setAttribute("class","pixel");
-   pixel.addEventListener("mousemove", change);
+   //pixel.setAttribute("class","pixel");
+   //pixel.addEventListener('mouseover', change);
+   pixelTd.addEventListener('mouseover', change);
    tRow.appendChild(pixelTd);
-   pixelTd.appendChild(pixel);
+   //pixelTd.appendChild(pixel);
     }
    }
 
@@ -65,7 +66,7 @@ function pixelPainter(width,height) {
     colRow.id = "swatch" + l ;
     colRow.style.backgroundColor = colorArray[l];
     colRow.addEventListener("click", choose);
-    colRow.innerHTML = "&nbsp&nbsp&nbsp&nbsp&nbsp";
+    colRow.innerHTML = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
     colTab.appendChild(colRow);
    }
 
@@ -74,10 +75,17 @@ function pixelPainter(width,height) {
   var btnDiv = document.createElement("div");
     btnDiv.setAttribute("id", "btnDiv");
     controls.appendChild(btnDiv);
+
+ //var penDiv = document.createElement("button//");
+ //   penDiv.setAttribute("id", "penDiv");
+ //   controls.appendChild(penDiv);
+ //   penDiv.innerHtml = '<p>i am pen</p>';
+
+
 /* Clear Button */
   var clearBtn = document.createElement("button");
    clearBtn.setAttribute("id", "clear");
-   clearBtn.addEventListener("click", clear);
+   clearBtn.addEventListener("mousedown", clear);
    clearBtn.innerHTML = "Clear";
    btnDiv.appendChild(clearBtn);
 
@@ -88,6 +96,7 @@ function pixelPainter(width,height) {
     eraseBtn.innerHTML = "Erase";
     btnDiv.appendChild(eraseBtn);
 
+
 function change(){
   this.style.backgroundColor = loadedColor;
 }
@@ -97,7 +106,7 @@ function erase(){
 }
 
 function clear(){
-  pixel.style.backgroundColor = "white";
+  document.getElementsByClassName("pixel").style.backgroundColor = "white";
 }
 
 
@@ -109,7 +118,7 @@ function choose(){
 
 }
 
-pixelPainter(60,40);
+pixelPainter(70,120);
 
 
 
