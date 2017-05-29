@@ -1,8 +1,17 @@
 #pp-canvas{
   display:inline-block;
+  /*+placement: 213px -96px;*/
+position: relative;
+left: 60px;
+top: 20px;
+border: solid .1px;
+
 }
 body{
-  background-color: #339933;
+  background:url("http://library.mitsubishielectric.co.uk/assets_frontend/pdf-directory/images/blankWall_BG.jpg");
+   background-blend-mode: color-dodge;
+  background-size: 120%;
+  background-repeat: no-repeat;
 }
 .cell {
   background-color: white;
@@ -27,86 +36,101 @@ body{
 }
 
 table,td,tr{
-  background-color: black;
+  backface-visibility: none;
   border-collapse: collapse;
 }
 
-#clear{
-  float:right;
+
+#btnDiv{
+position: absolute;
+left: -6.5px;
+top: 390px;
+display:inline;
 
 }
 
-#erase{
- float:right;
-}
-#swatch0{
-  background-color:white;
-}
-#swatch1{
-  float:left;
-  background-color: lightgray;
+#clear {
+   border-top: 1px solid #63737d;
+   background: #003f69;
+   background: -webkit-gradient(linear, left top, left bottom, from(#97b9cf), to(#003f69));
+   background: -webkit-linear-gradient(top, #97b9cf, #003f69);
+   background: -moz-linear-gradient(top, #97b9cf, #003f69);
+   background: -ms-linear-gradient(top, #97b9cf, #003f69);
+   background: -o-linear-gradient(top, #97b9cf, #003f69);
+   padding: 6.5px 13px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #ffffff;
+   font-size: 14px;
+   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   position:relative;
+   left:72px;
+   top:33px;
+   }
+#clear:hover {
+   border-top-color: #2c4e73;
+   background: #2c4e73;
+   color: #000000;
+   }
+#clear:active {
+   border-top-color: #ffffff;
+   background: #ffffff;
+
+   }
+
+
+#erase {
+   border-top: 1px solid #63737d;
+   background: #003f69;
+   background: -webkit-gradient(linear, left top, left bottom, from(#97b9cf), to(#003f69));
+   background: -webkit-linear-gradient(top, #97b9cf, #003f69);
+   background: -moz-linear-gradient(top, #97b9cf, #003f69);
+   background: -ms-linear-gradient(top, #97b9cf, #003f69);
+   background: -o-linear-gradient(top, #97b9cf, #003f69);
+   padding: 6.5px 13px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #ffffff;
+   font-size: 14px;
+   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+#erase:hover {
+   border-top-color: #2c4e73;
+   background: #2c4e73;
+   color: #000000;
+   }
+#erase:active {
+   border-top-color: #ffffff;
+   background: #ffffff;
+   }
+
+#pixelPainter{
+  display:inline-block;
 
 }
-#swatch2{
-  background-color:gray;
+
+#controls{
+  margin-top:10%;
+  display:inline-block;
+  /*+placement: 244px -66px;*/
+position: relative;
+left: 90px;
+top: -70px;
+
 }
-#swatch3{
-  background-color:darkgray;
-}
-#swatch4{
-  background-color:black;
-}
-#swatch5{
-  background-color:yellow;
-}
-#swatch6{
-  background-color:orange;
-}
-#swatch7{
-  background-color:salmon;
-}
-#swatch8{
-  background-color:pink;
-}
-#swatch9{
-  background-color:lightblue;
-}
-#swatch10{
-  background-color:cornflowerblue;
-}
-#swatch11{
-  background-color:aqua;
-}
-#swatch12{
-  background-color:blue;
-}
-#swatch13{
-  background-color:red
-}
-#swatch14{
-  background-color:darkred;
-}
-#swatch15{
-  background-color:purple;
-}
-#swatch16{
-  background-color:teal;
-}
-#swatch17{
-  background-color:lightgreen;
-}
-#swatch18{
-  background-color:lime;
-}
-#swatch19{
-  background-color:magenta;
-}
-#swatch20{
-  background-color:green;
-}
-#swatch21{
-  background-color:darkgreen;
-}
-#swatch22{
-  background-color:#bfff00;
-}
+
+

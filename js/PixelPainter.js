@@ -8,13 +8,28 @@ table.setAttribute("classname", "tables");
 /* Appending */
 main.appendChild(canvas);
 canvas.appendChild(table);
+var controls = document.createElement("div");
+controls.setAttribute("id", "controls");
 
-var array = ["blue", "white", "pink","red"]
+document.body.appendChild(controls);
+
+
+var loadedColor = null;
+
+var colorArray = [
+"#51574a",    "#447c69",   "#74c493",
+"#8e8c6d",    "#e4bf80",   "#e9d78e",
+"#e2975d",    "#f19670",   "#e16552",
+"#c94a53",    "#be5168",   "#a34974",
+"#993767",    "#65387d",   "#4e2472",
+"#9163b6",    "#e279a3",   "#e0598b",
+"#7c9fb0",    "#5698c4",   "#9abf88"
+];
 
 
 
 
-/* Pixel Painter function */
+/*"Pixel Painter function */
 function pixelPainter(width,height) {
 
 /* Generating Graph */
@@ -29,63 +44,72 @@ function pixelPainter(width,height) {
    var pixelTd =document.createElement("td");
    var pixel = document.createElement("div");
    pixelTd.setAttribute("class", "pixelTd");
-   pixel.setAttribute("class", "pixel");
-   pixel.addEventListener("mouseover", change);
+   pixel.setAttribute("class","pixel");
+   pixel.addEventListener("mousemove", change);
    tRow.appendChild(pixelTd);
    pixelTd.appendChild(pixel);
     }
    }
+
 /* Color Swatch */
   for( var m = 0; m <= 5; m++ ){
     var colorDiv = document.createElement("div");
     var colTab = document.createElement('table');
-
     colorDiv.setAttribute("class", "colors");
-    main.appendChild(colorDiv);
+    controls.appendChild(colorDiv);
     colorDiv.appendChild(colTab);
 
 
-      for( var l = 0; l <= 21; l++ ){
+      for( var l = 0; l < 21; l++ ){
     var colRow = document.createElement("tr");
     colRow.id = "swatch" + l ;
-    colTab.appendChild(colRow);
+    colRow.style.backgroundColor = colorArray[l];
+    colRow.addEventListener("click", choose);
     colRow.innerHTML = "&nbsp&nbsp&nbsp&nbsp&nbsp";
-     }
+    colTab.appendChild(colRow);
+   }
 
   }
 
-
-
-
+  var btnDiv = document.createElement("div");
+    btnDiv.setAttribute("id", "btnDiv");
+    controls.appendChild(btnDiv);
 /* Clear Button */
   var clearBtn = document.createElement("button");
    clearBtn.setAttribute("id", "clear");
    clearBtn.addEventListener("click", clear);
    clearBtn.innerHTML = "Clear";
-   main.appendChild(clearBtn);
+   btnDiv.appendChild(clearBtn);
 
 /* Erase Button */
   var eraseBtn = document.createElement("button");
     eraseBtn.setAttribute("id", "erase");
-    /*eraseBtn.addEventListener("click");*/
+    eraseBtn.addEventListener("click",erase);
     eraseBtn.innerHTML = "Erase";
-    main.appendChild(eraseBtn);
+    btnDiv.appendChild(eraseBtn);
 
-/* Change */
-  function change(){
-     this.style.backgroundColor = "black";
-  }
+function change(){
+  this.style.backgroundColor = loadedColor;
+}
 
-/* CLear */
-  function clear(){
-    pixel.style.backgroundColor = "white";
-  }
+function erase(){
+  loadedColor = "white";
+}
 
-  return{};
+function clear(){
+  pixel.style.backgroundColor = "white";
+}
+
+
+function choose(){
+  loadedColor = this.style.backgroundColor;
+}
+
+
 
 }
 
-pixelPainter(100,100);
+pixelPainter(60,40);
 
 
 
