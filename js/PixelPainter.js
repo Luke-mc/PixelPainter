@@ -7,7 +7,7 @@ canvas.setAttribute("id", "pp-canvas");
 var table = document.createElement('table');
 table.setAttribute("classname", "tables");
 // Creating Controls
-var controls = document.createElement("div");
+var controls = document.createElement("container");
 controls.setAttribute("id", "controls");
 // Appending all
 main.appendChild(canvas);
@@ -44,7 +44,7 @@ function pixelPainter(width,height) {
       pixelTd.setAttribute("class", "pixelTd");
       //pixel.setAttribute("class","pixel");
       //pixel.addEventListener('mouseover', change);
-      pixelTd.addEventListener('mouseover', change);
+      pixelTd.addEventListener("mouseover", change);
       tRow.appendChild(pixelTd);
       //pixelTd.appendChild(pixel);
     }
@@ -83,31 +83,42 @@ function pixelPainter(width,height) {
 // Clear Button
   var clearBtn = document.createElement("button");
   clearBtn.setAttribute("id", "clear");
-  clearBtn.addEventListener("mousedown", clear);
+  clearBtn.addEventListener("click", clear);
+  clearBtn.addEventListener("mouseover", function(){clearBtn.innerHTML = "You Sure?";});
+  clearBtn.addEventListener("mouseout", function(){clearBtn.innerHTML = "Clear";});
   clearBtn.innerHTML = "Clear";
   btnDiv.appendChild(clearBtn);
 
 // Erase Button
   var eraseBtn = document.createElement("button");
   eraseBtn.setAttribute("id", "erase");
-  eraseBtn.addEventListener("click",erase);
+  eraseBtn.addEventListener("mousedown",erase);
+  eraseBtn.addEventListener("mouseover", function(){eraseBtn.innerHTML = "I'll Fix It";});
+  eraseBtn.addEventListener("mouseout", function(){eraseBtn.innerHTML = "Erase";});
   eraseBtn.innerHTML = "Erase";
   btnDiv.appendChild(eraseBtn);
+
 
         // Functions //
 
 // Change Pixels to LoadedColor
   function change(){
-    this.style.backgroundColor = loadedColor;
+  this.style.backgroundColor = loadedColor;
   }
+
 // Erase
   function erase(){
     loadedColor = "white";
   }
+
 // Clear
   function clear(){
-    document.getElementsByClassName("pixel").style.backgroundColor = "white";
+   var ted = document.getElementsByClassName('pixelTd');
+    for( var i = 0; i < ted.length; i++ ){
+    ted[i].style.background = "white";
+    }
   }
+
 // Set Loaded Color
   function choose(){
     loadedColor = this.style.backgroundColor;
@@ -116,6 +127,16 @@ function pixelPainter(width,height) {
 
 // Invoke pixelPainter
 pixelPainter(70,120);
+
+
+//To do:
+
+//Responsiveness
+//Change size of mouseover diameter for PenSize
+//Make painting "mousedown" and mouseover
+//App version
+
+
 
 
 
