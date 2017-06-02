@@ -49,13 +49,9 @@ function pixelPainter(width,height) {
 
     for( var j = 0; j <= width; j++ ){
       var pixelTd =document.createElement('td');
-      //var pixel = document.createElement("div");
       pixelTd.setAttribute("class", "pixelTd");
-      //pixel.setAttribute("class","pixel");
-      //pixel.addEventListener('mouseover', change);
       pixelTd.addEventListener("mouseover", change);
       tRow.appendChild(pixelTd);
-      //pixelTd.appendChild(pixel);
     }
   }
 
@@ -83,12 +79,6 @@ function pixelPainter(width,height) {
   var btnDiv = document.createElement("div");
   btnDiv.setAttribute("id", "btnDiv");
   controls.appendChild(btnDiv);
-
-// Pen Size Button
-  //var penDiv = document.createElement("button//");
-  //penDiv.setAttribute("id", "penDiv");
-  //controls.appendChild(penDiv);
-  //penDiv.innerHtml = '<p>i am pen</p>';
 
 // Clear Button
   var clearBtn = document.createElement("button");
@@ -139,12 +129,7 @@ function pixelPainter(width,height) {
 pixelPainter(120,240);
 
 
-//To do:
 
-//Responsiveness
-//Change size of mouseover diameter for PenSize
-//Make painting "mousedown" and mouseover
-//App version
 
 
 
