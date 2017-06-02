@@ -9,10 +9,19 @@ table.setAttribute("classname", "tables");
 // Creating Controls
 var controls = document.createElement("container");
 controls.setAttribute("id", "controls");
+var footer = document.createElement("footer");
+footer.setAttribute("id", "footer");
+document.body.appendChild(footer);
+var footDiv = document.createElement("div");
+footDiv.setAttribute("id", "footDiv");
+footer.appendChild(footDiv);
+
 // Appending all
 main.appendChild(canvas);
 canvas.appendChild(table);
-document.body.appendChild(controls);
+main.appendChild(controls);
+
+
 
 // Loaded color
 var loadedColor = null;
@@ -51,21 +60,22 @@ function pixelPainter(width,height) {
   }
 
 // Creating Color Swatch
-  for( var m = 0; m <= 5; m++ ){
+ // for( var m = 0; m <= 5; m++ ){
     var colorDiv = document.createElement("div");
     var colTab = document.createElement('table');
+    colTab.setAttribute("class","colTab");
     colorDiv.setAttribute("class", "colors");
     controls.appendChild(colorDiv);
     colorDiv.appendChild(colTab);
 
-    for( var l = 0; l < 21; l++ ){
+  for( var l = 0; l < 21; l++ ){
       var colRow = document.createElement("tr");
-      colRow.id = "swatch" + l ;
+      colRow.setAttribute("class", "colRow");
       colRow.style.backgroundColor = colorArray[l];
       colRow.addEventListener("click", choose);
       colRow.innerHTML = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
       colTab.appendChild(colRow);
-    }
+    //}
   }
         // Creating Buttons //
 
@@ -126,7 +136,7 @@ function pixelPainter(width,height) {
 }
 
 // Invoke pixelPainter
-pixelPainter(70,120);
+pixelPainter(120,240);
 
 
 //To do:
